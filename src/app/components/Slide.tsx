@@ -93,7 +93,7 @@ interface TeamMember {
 interface SlideProps {
   slide: {
     title: string;
-    content: string;
+    content?: string;
     image: string;
     imageAlt: string;
     isTeamSlide?: boolean;
@@ -111,8 +111,9 @@ const TeamMemberCard: React.FC<{
     <div
       className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm 
                   rounded-xl p-6 border border-white/20 hover:border-green-400/50
-                  transition-all duration-500 hover:transform hover:scale-105
-                  hover:shadow-xl hover:shadow-green-400/20 group
+                  transition-all duration-700 hover:transform hover:scale-[2.5] hover:z-50
+                  hover:shadow-2xl hover:shadow-green-400/30 group cursor-pointer
+                  relative hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10
                   ${
                     isActive
                       ? "opacity-100 translate-y-0"
@@ -122,41 +123,53 @@ const TeamMemberCard: React.FC<{
         transitionDelay: isActive ? `${index * 150}ms` : "0ms",
       }}
     >
-      <div className="relative mb-4 mx-auto w-24 h-24 rounded-full overflow-hidden">
+      <div
+        className="relative mb-4 mx-auto w-24 h-24 rounded-full overflow-hidden
+                      group-hover:w-32 group-hover:h-32 transition-all duration-700"
+      >
         <img
           src={member.image}
           alt={member.name}
-          className="w-full h-full object-cover transition-transform duration-300 
+          className="w-full h-full object-cover transition-transform duration-700 
                      group-hover:scale-110"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            target.src = `https://ui-avatars.com/api/?name=${member.name}&background=10b981&color=ffffff&size=96`;
+            target.src = `https://ui-avatars.com/api/?name=${member.name}&background=10b981&color=ffffff&size=128`;
           }}
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-green-600/30 to-transparent 
-                        opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-700"
         />
       </div>
 
       <div className="text-center">
         <h3
-          className="text-white font-semibold text-lg mb-1 group-hover:text-green-300 
-                       transition-colors duration-300"
+          className="text-white font-semibold text-lg mb-2 group-hover:text-green-300 
+                       group-hover:text-2xl transition-all duration-700"
         >
           {member.name}
         </h3>
-        <p className="text-green-400 font-medium text-sm mb-2">{member.role}</p>
-        <p className="text-white/70 text-xs leading-relaxed">
+        <p
+          className="text-white/70 text-sm leading-relaxed group-hover:text-lg 
+                      group-hover:text-white/90 transition-all duration-700"
+        >
           {member.description}
         </p>
       </div>
 
-      {/* Decorative elements */}
+      {/* Decorative elements that appear on hover */}
       <div
         className="absolute top-2 right-2 w-2 h-2 bg-green-400 rounded-full 
-                      opacity-0 group-hover:opacity-100 transition-all duration-300 
-                      group-hover:animate-pulse"
+                      opacity-0 group-hover:opacity-100 transition-all duration-700 
+                      group-hover:animate-pulse group-hover:w-3 group-hover:h-3"
+      />
+
+      {/* Additional glow effect on hover */}
+      <div
+        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100
+                      bg-gradient-to-r from-green-400/10 via-teal-400/10 to-green-400/10
+                      transition-opacity duration-700 pointer-events-none"
       />
     </div>
   );
@@ -167,9 +180,9 @@ const Slide: React.FC<SlideProps> = ({ slide, isActive }) => {
     return (
       <div className="min-w-full h-full flex flex-col justify-center p-6 md:p-12 lg:p-16">
         {/* Title Section */}
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-12 md:mb-16">
           <h1
-            className={`text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 
+            className={`text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6
                          leading-tight transition-all duration-1000 ${
                            isActive
                              ? "opacity-100 translate-y-0"
@@ -180,24 +193,12 @@ const Slide: React.FC<SlideProps> = ({ slide, isActive }) => {
               {slide.title}
             </span>
           </h1>
-
-          <p
-            className={`text-lg md:text-xl text-white/90 max-w-2xl mx-auto 
-                        leading-relaxed font-light whitespace-pre-line
-                        transition-all duration-1000 delay-200 ${
-                          isActive
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-8"
-                        }`}
-          >
-            {slide.content}
-          </p>
         </div>
 
         {/* Team Members Grid */}
         <div className="flex-1 flex items-center justify-center">
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 
                           max-w-6xl w-full"
           >
             {slide.teamMembers?.map((member, index) => (
