@@ -1,5 +1,44 @@
 export const slides = [
   {
+    title: "Багийн гишүүд",
+
+    image: "team",
+    imageAlt: "Багийн гишүүд",
+    isTeamSlide: true,
+    teamMembers: [
+      {
+        name: "Г.Алтансүх",
+        image: "/member1.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Г.Ган-Эрдэнэ",
+        image: "/member6.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Э.Билгүүн",
+        image: "/member2.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Ж.Болортуяа",
+        image: "/member3.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "М.Тэргэл",
+        image: "/member4.jpeg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Г.Гантуяа",
+        image: "/member5.jpeg",
+        description: "Frontend & Backend",
+      },
+    ],
+  },
+  {
     title: "Төслийн зорилго",
     content: `• Хүүхдийн боловсролыг дэмжих зорилготой
 • Багаараа хийсэн анхны fullstack project
