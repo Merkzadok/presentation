@@ -1,18 +1,21 @@
-import { title } from "process";
-
 export const slides = [
   {
-    title: "60 секунд",
+    title: "Манай Вэбсайтад Зочлоорой",
+    content: `QR кодыг уншуулан манай вэбсайт руу хялбар орж үзээрэй`,
+    image: "/qrcode.png",
+    imageAlt: "Манай вэбсайтын QR код",
   },
+
   {
     title: "Төслийн зорилго",
     content: `• Хүүхдийн унших сонирхол болон чадварыг дэмжинэ 
 • AI-interactive элементүүдтэй
 • Энгийн, ойлгомжтой байдлаар хийсэн`,
-    image: "/design.png",
-    // imageAlt: "Багийн хамтын ажиллагаа, төслийн төлөвлөлт",
+    image: "/hee.png",
+    imageAlt: "Багийн хамтын ажиллагаа, төслийн төлөвлөлт",
   },
-{
+
+  {
     title: "Дизайн ба хэрэглэгчийн туршлага",
     content: `• Хялбар, ойлгомжтой 
 •  Хүүхдийн анхаарлыг татахуйц
@@ -31,7 +34,7 @@ export const slides = [
 • Deployment: Vercel
 `,
 
-    image: "/images.jpeg",
+    image: "/tech.png",
     imageAlt: "Хөгжүүлэлтийн орчин, код ба технологи",
   },
   {
@@ -43,7 +46,7 @@ export const slides = [
 • Хэрэглэгчийн санал хүсэлтийг авч сайжруулалт хийх
 
 `,
-    image: "/vision.jpg",
+    image: "/photo5.jpg",
     imageAlt: "Ирээдүйн технологи ба инновац",
   },
   {
