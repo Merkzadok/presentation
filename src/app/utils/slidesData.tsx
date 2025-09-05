@@ -1,11 +1,43 @@
 export const slides = [
   {
-    title: "Манай Вэбсайтад Зочлоорой",
-    content: `QR кодыг уншуулан манай вэбсайт руу хялбар орж үзээрэй`,
-    image: "/qrcode.png",
-    imageAlt: "Манай вэбсайтын QR код",
-  },
+    title: "Багийн гишүүд",
 
+    image: "team",
+    imageAlt: "Багийн гишүүд",
+    isTeamSlide: true,
+    teamMembers: [
+      {
+        name: "Г.Алтансүх",
+        image: "/member1.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Г.Ган-Эрдэнэ",
+        image: "/member6.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Э.Билгүүн",
+        image: "/member2.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Ж.Болортуяа",
+        image: "/member3.jpg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "М.Тэргэл",
+        image: "/member4.jpeg",
+        description: "Frontend & Backend",
+      },
+      {
+        name: "Г.Гантуяа",
+        image: "/member5.jpeg",
+        description: "Frontend & Backend",
+      },
+    ],
+  },
   {
     title: "Төслийн зорилго",
     content: `• Хүүхдийн унших сонирхол болон чадварыг дэмжинэ 
@@ -49,43 +81,11 @@ export const slides = [
     image: "/photo5.jpg",
     imageAlt: "Ирээдүйн технологи ба инновац",
   },
-  {
-    title: "Багийн гишүүд",
 
-    image: "team",
-    imageAlt: "Багийн гишүүд",
-    isTeamSlide: true,
-    teamMembers: [
-      {
-        name: "Г.Алтансүх",
-        image: "/member1.jpg",
-        description: "Frontend & Backend",
-      },
-      {
-        name: "Г.Ган-Эрдэнэ",
-        image: "/member6.jpg",
-        description: "Frontend & Backend",
-      },
-      {
-        name: "Э.Билгүүн",
-        image: "/member2.jpg",
-        description: "Frontend & Backend",
-      },
-      {
-        name: "Ж.Болортуяа",
-        image: "/member3.jpg",
-        description: "Frontend & Backend",
-      },
-      {
-        name: "М.Тэргэл",
-        image: "/member4.jpeg",
-        description: "Frontend & Backend",
-      },
-      {
-        name: "Г.Гантуяа",
-        image: "/member5.jpeg",
-        description: "Frontend & Backend",
-      },
-    ],
+  {
+    title: "Манай Вэбсайтад Зочлоорой",
+    content: `QR кодыг уншуулан манай вэбсайт руу хялбар орж үзээрэй`,
+    image: "/qrcode.png",
+    imageAlt: "Манай вэбсайтын QR код",
   },
 ];
